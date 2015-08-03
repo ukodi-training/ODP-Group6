@@ -100,7 +100,9 @@ var country = svg.selectAll(".country").data(countries);
       .on("mousemove", function(d,i) {
       	d3.select(this).style("stroke","black")
       	.style("stroke-width","1.2px")
-      })
+      	$('#info').html("<h2>"+d.name+"</h2>Population:<span class='population'>"+d.value.toString().replace(/\B(?=\d{3})+(?!\d))/g,",")+"</span>");
+      }
+      )
       .on("click", function(d,i) {
       })
       .on("mouseout",  function(d,i) {
